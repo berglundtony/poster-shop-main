@@ -1,0 +1,289 @@
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+:root {
+    --clr-primary-400: hsl(213, 84%, 40%);
+    --clr-primary-800: hsl(213, 54%, 80%);
+    --clr-primary-900: hsl(213, 34%, 87%);
+
+    --clr-neutral-100: hsl(0, 9%, 7%);
+    --clr-neutral-300: hsl(0, 0%, 30%);
+    --clr-neutral-700: hsl(190, 2%, 51%);
+    --clr-neutral-800: hsl(0, 9%, 94%);
+    --clr-neutral-900: hsl(0, 9%, 97%);
+    --clr-neutral-1000: hsl(0, 0%, 100%);
+    --clr-winered-200: hsl(0, 60%, 19%);
+
+    --clr-black-background: hsl(0, 0%, 0%);
+    --clr-red-button: #E83F57;
+    --font-family: 'fira-sans-black', sans-serif;
+    --fs-xsmall: 0.7rem;
+    --fs-small: 0.9rem;
+    --fs-large: 2.2rem;
+    --fs-xlarge: 2.6rem;
+    --fw-normal: 400;
+    --fw-bold: 700;
+}
+
+
+body {
+    background-color: var(--clr-neutral-300);
+}
+ 
+.grid-container{
+    margin: 0 auto;
+    /* Begränsa innehållets bredd */
+    max-width: 1440px;
+    /* Lägger till inre marginaler på sidorna */
+    padding: 0 1em;
+    display: grid;
+    grid-template:
+        [row1-start] 'header'[row1-end] 
+        [row1-start] 'section'[row1-end]
+        [row2-start] 'main'[row2-end] 
+        [row3-start] 'footer'[row3-end];
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+    width: 100%;
+
+}
+header{
+    grid-area: header;
+}
+
+main{
+    grid-area: main;
+    background-color: var(--clr-black-background);
+    padding: 1rem;
+}
+
+section.basket{
+    margin: 7rem 0 0 11.8rem;
+    text-align: left;
+    h1{
+      color:hsl(0, 0%, 100%);
+      font-family: var(--font-family);
+      font-size: var(--fs-xlarge);
+    } 
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 1rem;
+    row-gap: 1rem;
+    width: 1000px;
+    text-align: left;
+    margin: 3rem auto;
+}
+
+.card{
+    grid-column: span 2;
+    color: var(--clr-neutral-900);
+    background-color: var(--clr-black-background);
+
+    h2{
+        font-family: var(--font-family);
+        font-weight: var(--fw-bold);
+        font-size: var(--fs-large);
+        padding: 1rem 0
+    }
+
+    p{
+        font-family: var(--font-family);
+        font-size: var(--fs-small);
+        margin-bottom: 2rem;
+    }
+}
+
+.card-item-10, .card-item-11{
+    grid-column: span 3;
+    background-color: var(--clr-neutral-1000);
+    color: var(--clr-neutral-100);
+    display:inline-block;
+    padding: 0rem 0rem;
+    border-radius: 0px;
+
+    img{
+        width: 100%;
+    }
+    header{
+        h2{
+            padding: 0.9rem;
+            margin-bottom: -1.4rem;
+        }
+    }
+    section{
+        padding: 0.9rem;
+    }
+
+}
+.button-s {
+    background-color: var(--clr-red-button);
+    color: var(--clr-neutral-1000);
+    font-family: var(--font-family);
+    font-size: var(--fs-xsmall);
+    border-radius: 6px;
+        -moz-border-radius: 6px;
+        -webkit-border-radius: 6px;
+    padding: 8px 12px;
+}
+
+.button-xl{
+    background-color: var(--clr-red-button);
+    color: var(--clr-neutral-1000);
+    font-family: var(--font-family);
+    font-size: var(--fs-small);
+    border-radius: 6px;
+        -moz-border-radius: 6px;
+        -webkit-border-radius: 6px;
+    padding: 15px 20px;
+}
+    .table-container{
+        display:grid;
+        max-width:730px;
+        justify-content: center;
+        margin: 0 auto;
+    }
+        .highlight {
+            border-top: 2px solid gray;
+        }
+     
+    
+        table {
+            width: 1000px;
+            border-collapse: collapse;
+            /* Viktigt för att kunna sätta fasta breddvärden */
+            table-layout: fixed;  
+        }
+        th, td {
+            color: var(--clr-neutral-1000);
+            text-align: left;
+            font-size: var(--fs-small);
+            font-family: var(--font-family);
+            padding:0.6rem;
+        }
+ 
+        th:nth-child(1), th:nth-child(2),  th:nth-child(3){
+            background-color: var(--clr-winered-200);
+        }
+        th:nth-child(1),
+        td:nth-child(1) {
+            width: 40%;
+         
+            /* Första kolumnen */
+        }
+
+        th:nth-child(2),
+        td:nth-child(2) {
+            width: 30%;
+            /* Andra kolumnen */
+        }
+
+        th:nth-child(3),
+        td:nth-child(3) {
+            width: 30%;
+            /* tredje kolumnen */
+        }
+    
+article {
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #333;
+    color: var(--clr-neutral-1000);
+    padding: 1rem;
+}
+
+.grid-footer-container{
+    display: grid;
+    grid-template-areas:
+    'Navigation Adress Social-Media';
+    gap: 1rem;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    height: 20vh;
+    width: 95%;
+}
+
+.navigation{
+    grid-area: Navigation;
+    color: var(--clr-neutral-1000);
+    text-align: center;
+
+    h3{
+        font-family: var(--font-family);
+        font-size: var(--fs-large);
+        font-weight: var(--fw-bold);
+        padding-bottom: 0.1em;
+    }
+
+    ul {
+        list-style-type: none;
+        /* Centrerar hela listan horisontellt inom containern */
+        margin: 0 auto;
+        /* Ser till att listan inte tar upp onödig bredd */
+        max-width: fit-content;
+        text-align: left;
+    }
+
+    ul > li {
+        color: var(--clr-neutral-1000);
+        font-family: var(--font-family);
+        line-height: 1.5rem;
+    }
+}
+
+.adress{
+    grid-area: Adress;
+    text-align: center;
+    h3 {
+        font-family: var(--font-family);
+        font-size: var(--fs-large);
+        font-weight: var(--fw-bold);
+        padding-bottom: 0.5em;
+    }
+    ul{
+        list-style-type: none;
+        /* Centrerar hela listan horisontellt inom containern */
+        margin: 0 auto;
+        max-width: fit-content;
+        text-align: left;
+        padding-left: 1.2rem;
+    }
+  
+    ul > li {
+        color: var(--clr-neutral-1000);
+        font-family: var(--font-family);
+        line-height: 1.5rem;
+    }
+}
+
+.social-media{
+    grid-area: Social-Media;
+    color: var(--clr-neutral-1000);
+    h3 {
+            font-family: var(--font-family);
+            font-size: var(--fs-large);
+            font-weight: var(--fw-bold);
+            padding-bottom: 0.5em;
+    }
+        /* Centrerar hela listan horisontellt inom containern */
+        margin: 0 auto;
+        /* Ser till att listan inte tar upp onödig bredd */
+        max-width: fit-content;
+        text-align: left;
+}
