@@ -32,7 +32,6 @@ img {
 
     --clr-black-background: hsl(0, 0%, 0%);
     --clr-red-button: #E83F57;
-  
 }
 
 body {
@@ -48,7 +47,6 @@ body {
     display: grid;
     grid-template:
         [row1-start] 'header'[row1-end] 
-        [row1-start] 'section'[row1-end]
         [row2-start] 'main'[row2-end] 
         [row3-start] 'footer'[row3-end];
     grid-template-rows: auto 1fr auto;
